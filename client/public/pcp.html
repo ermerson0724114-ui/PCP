@@ -810,50 +810,48 @@ td.total-cell { background: #e8eaf6; font-weight: 800; color: #1a237e; font-size
 
 /* PRINT */
 @media print {
-  @page { size: A4 portrait; margin: 1mm 1mm; }
-  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body { background: white !important; font-size: 4.5pt; color: #000 !important; }
-  .page-wrapper { padding: 0; max-width: 100%; transform: scale(0.52); transform-origin: top left; width: 192%; }
+  @page { size: portrait; margin: 2mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-sizing: border-box !important; }
+  body { background: white !important; font-size: 4pt; color: #000 !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+  .page-wrapper { padding: 0 !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; }
   .header-subbar { display: none !important; }
   .btn-print, .btn-download, .btn-upload, .btn-suggestion, .upload-status,
   .btn-estoque-analise, .btn-params, .btn-clear, .btn-undo, .btn-redo { display: none !important; }
   .modal-overlay, .estoque-overlay, .params-overlay { display: none !important; }
   .header-card {
-    border-radius: 0; padding: 2px 6px; gap: 2px;
+    border-radius: 0; padding: 2px 4px; gap: 1px;
     background: var(--green) !important;
   }
-  .logo-block { font-size: 9px; padding: 1px 4px; }
-  .header-center h1 { font-size: 8pt; letter-spacing: 1px; color: #fff !important; }
-  .header-center .obs { font-size: 5pt; color: #fff !important; }
-  .week-selector { padding: 2px 4px; min-width: 80px; }
-  .ws-range { font-size: 7pt; }
-  .ws-label { font-size: 5pt; }
-  .section-card { margin-top: 6px; box-shadow: none; border: 1px solid #999; page-break-inside: avoid; page-break-before: avoid; page-break-after: avoid; }
-  .section-title { padding: 1px 0; font-size: 5.5pt; color: #fff !important; }
-  .line-title { padding: 1px 0; font-size: 5.5pt; }
-  .pcp-table { font-size: 5pt; width: 100%; table-layout: fixed; }
-  .pcp-table th { font-size: 5pt; padding: 1px 1px; overflow: hidden; white-space: nowrap; }
-  .pcp-table td { padding: 0px 1px; overflow: hidden; }
-  .pcp-table td:has(input.sabor-input) { min-width: 0 !important; overflow: visible !important; white-space: nowrap !important; }
-  .pcp-table td:has(input.edit:not(.sabor-input)) { min-width: 0 !important; width: 28px !important; max-width: 32px !important; }
+  .logo-block { font-size: 7px; padding: 1px 3px; }
+  .header-center h1 { font-size: 7pt; letter-spacing: 0.5px; color: #fff !important; }
+  .header-center .obs { font-size: 4pt; color: #fff !important; }
+  .week-selector { display: none !important; }
+  .section-card { margin-top: 3px; box-shadow: none; border: 1px solid #999; page-break-inside: avoid; }
+  .section-title { padding: 1px 0; font-size: 4.5pt; color: #fff !important; }
+  .line-title { padding: 1px 0; font-size: 4.5pt; color: #fff !important; }
+  .pcp-table { font-size: 4pt; width: 100% !important; table-layout: auto !important; border-collapse: collapse !important; }
+  .pcp-table th { font-size: 3.5pt; padding: 1px 1px !important; white-space: nowrap; }
+  .pcp-table td { padding: 1px 1px !important; white-space: nowrap; height: 18px !important; }
+  .pcp-table td:has(input.sabor-input) { min-width: 0 !important; }
+  .pcp-table td:has(input.edit:not(.sabor-input)) { min-width: 0 !important; width: 14px !important; max-width: 18px !important; }
   input.edit, input.edit.sabor-input {
-    font-size: 5pt; border-bottom: 0.5px solid #666;
+    font-size: 6pt !important; border: none !important; border-bottom: 0.3px solid #888 !important;
     background: transparent !important; min-width: 0 !important;
-    width: 100% !important; height: auto !important; padding: 0px !important;
+    width: 100% !important; height: 18px !important; padding: 0 !important;
     color: #000 !important; font-weight: 700 !important;
-    margin: 0 !important;
+    margin: 0 !important; line-height: 18px !important;
   }
-  input.edit.sabor-input { font-size: 5.5pt; overflow: visible !important; width: auto !important; min-width: 60px !important; }
-  td.computed { color: #000 !important; font-weight: 700 !important; font-size: 5pt; }
-  td.total-cell { color: #000 !important; font-weight: 700 !important; font-size: 5.5pt; }
-  .td-dia { color: #fff !important; font-size: 5.5pt; background: #1a237e !important; }
-  .td-data { color: #000 !important; font-size: 5.5pt; }
+  input.edit.sabor-input { font-size: 6.5pt !important; }
+  td.computed { color: #000 !important; font-weight: 700 !important; font-size: 6pt !important; padding: 1px 1px !important; }
+  td.total-cell { color: #000 !important; font-weight: 700 !important; font-size: 6.5pt !important; }
+  .td-dia { color: #fff !important; font-size: 6pt !important; background: #1a237e !important; padding: 1px 1px !important; }
+  .td-data { color: #000 !important; font-size: 5.5pt !important; padding: 1px 1px !important; }
   td.s2-bg { background: rgba(255,248,204,0.4) !important; }
   td.s2-bg input.edit { color: #000 !important; }
-  .pasteurizar-box { margin-top: 1px; padding: 2px 6px; }
-  .pasteurizar-box h3 { font-size: 5.5pt; margin-bottom: 1px; color: #000 !important; }
-  .pasteurizar-box textarea { min-height: 14px; font-size: 5pt; color: #000 !important; }
-  .section-card + .section-card { margin-top: 6px; }
+  .pasteurizar-box { margin-top: 2px; padding: 1px 4px; }
+  .pasteurizar-box h3 { font-size: 4.5pt; margin-bottom: 1px; color: #000 !important; }
+  .pasteurizar-box textarea { min-height: 10px; font-size: 4pt; color: #000 !important; height: 20px !important; }
+  .section-card + .section-card { margin-top: 3px; }
   .btn-sabor-comment { display: none !important; }
   .th-sabor1 { color: #000 !important; }
   .th-sabor2 { color: #000 !important; }
@@ -1467,8 +1465,11 @@ kbd { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; border-rad
 /* Print updates to hide new panels */
 @media print {
   .alert-center-panel, .search-filter-bar, .coverage-chart-section,
-  .changelog-panel, .sku-notes-panel, .shortcut-overlay,
+  .changelog-panel, .shortcut-overlay,
   .btn-dark-mode, .btn-pdf, .btn-share, .header-subbar { display: none !important; }
+  .sku-notes-panel { margin-top: 3px; padding: 2px 4px !important; }
+  .sku-notes-panel h3 { font-size: 5pt !important; color: #000 !important; margin-bottom: 1px !important; }
+  #skuNotes { font-size: 5pt !important; color: #000 !important; min-height: 16px !important; height: 24px !important; border: 0.5px solid #999 !important; padding: 2px !important; }
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
